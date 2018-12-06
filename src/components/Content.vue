@@ -6,9 +6,7 @@
       </v-flex>
 
       <v-flex mb-4>
-        <h1
-          class="display-2 font-weight-bold mb-3"
-          >Welcome to Vuetify </h1>
+        <h1 class="display-2 font-weight-bold mb-3">Welcome to Vuetify</h1>
         <p class="subheading font-weight-regular">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis
           ipsum sit amet tortor rhoncus eleifend quis vitae leo. Fusce convallis
@@ -43,109 +41,54 @@
     </v-layout>
 
     <v-layout text-xs-center mt-5 wrap v-else>
-       <v-flex xs12 sm6 offset-sm3>
-      <v-card>
-        <v-img
-          src="https://cdn.vuetifyjs.com/images/lists/ali.png"
-          height="300px"
-        >
-          <v-layout
-            column
-            fill-height
-          >
-            <v-card-title>
-              <v-btn dark icon>
-                <v-icon>chevron_left</v-icon>
-              </v-btn>
+      <v-flex xs12 sm6 offset-sm3>
+        <v-card>
+          <v-img src="https://cdn.vuetifyjs.com/images/lists/ali.png" height="300px">
+            <v-layout column fill-height>
+              <v-card-title>
+                <v-spacer></v-spacer>
+                <v-tooltip left>
+                  <v-btn dark icon>
+                    <v-icon color="green">turned_in</v-icon>
+                  </v-btn>
+                  <span>Left tooltip</span>
+                </v-tooltip>
+              </v-card-title>
 
               <v-spacer></v-spacer>
 
-              <v-btn dark icon class="mr-3">
-                <v-icon>edit</v-icon>
-              </v-btn>
-
-              <v-btn dark icon>
-                <v-icon>more_vert</v-icon>
-              </v-btn>
-            </v-card-title>
-
-            <v-spacer></v-spacer>
-
-            <v-card-title class="white--text pl-5 pt-5">
-              <div class="display-1 pl-5 pt-5">
-                {{user_infos.given_name}}
-                {{user_infos.family_name}}
+              <v-card-title class="white--text pl-5 pt-5">
+                <div class="display-1 pl-5 pt-5">
+                  {{user_infos.given_name}}
+                  {{user_infos.family_name}}
                 </div>
-            </v-card-title>
-          </v-layout>
-        </v-img>
+              </v-card-title>
+            </v-layout>
+          </v-img>
 
-        <v-list two-line>
-          <v-list-tile >
-            <v-list-tile-action>
-              <v-icon color="indigo">phone</v-icon>
-            </v-list-tile-action>
+          <v-list two-line>
+            <v-list-tile>
+              <v-list-tile-action>
+                <v-icon color="indigo">person</v-icon>
+              </v-list-tile-action>
 
-            <v-list-tile-content>
-              <v-list-tile-title>(650) 555-1234</v-list-tile-title>
-              <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
-            </v-list-tile-content>
+              <v-list-tile-content>
+                <v-list-tile-title>gender :</v-list-tile-title>
+                <v-list-tile-sub-title>{{user_infos.gender}}</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
 
-            <v-list-tile-action>
-              <v-icon>chat</v-icon>
-            </v-list-tile-action>
-          </v-list-tile>
+            <v-list-tile>
+              <v-list-tile-action></v-list-tile-action>
 
-          <v-list-tile >
-            <v-list-tile-action></v-list-tile-action>
-
-            <v-list-tile-content>
-              <v-list-tile-title>(323) 555-6789</v-list-tile-title>
-              <v-list-tile-sub-title>Work</v-list-tile-sub-title>
-            </v-list-tile-content>
-
-            <v-list-tile-action>
-              <v-icon>chat</v-icon>
-            </v-list-tile-action>
-          </v-list-tile>
-
-          <v-divider inset></v-divider>
-
-          <v-list-tile >
-            <v-list-tile-action>
-              <v-icon color="indigo">mail</v-icon>
-            </v-list-tile-action>
-
-            <v-list-tile-content>
-              <v-list-tile-title>aliconnors@example.com</v-list-tile-title>
-              <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-
-          <v-list-tile>
-            <v-list-tile-action></v-list-tile-action>
-
-            <v-list-tile-content>
-              <v-list-tile-title>ali_connors@example.com</v-list-tile-title>
-              <v-list-tile-sub-title>Work</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-
-          <v-divider inset></v-divider>
-
-          <v-list-tile >
-            <v-list-tile-action>
-              <v-icon color="indigo">location_on</v-icon>
-            </v-list-tile-action>
-
-            <v-list-tile-content>
-              <v-list-tile-title>1400 Main Street</v-list-tile-title>
-              <v-list-tile-sub-title>Orlando, FL 79938</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-card>
-    </v-flex>
+              <v-list-tile-content>
+                <v-list-tile-title>birthdate :</v-list-tile-title>
+                <v-list-tile-sub-title>{{user_infos.birthdate}}</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -156,9 +99,9 @@ import { AUTH_REQUEST_V1 } from "@/store/actions/auth";
 export default {
   mounted() {
     //eslint-disable-next-line
-    const userInfos = JSON.parse(localStorage.getItem('userInfos'))
+    const userInfos = JSON.parse(localStorage.getItem("userInfos"));
     this.user_infos = userInfos;
-    console.log('this.userInfos', this.user_infos)
+    console.log("this.userInfos", this.user_infos);
   },
   data: function() {
     return {

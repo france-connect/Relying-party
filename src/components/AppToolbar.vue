@@ -36,10 +36,10 @@
 
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn v-if="user_infos" flat href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" color="red">
+      <v-btn v-if="user_infos" flat color="red" v-on:click="logout_V1">
         <span class="mr-2">Logout</span>
       </v-btn>
-      <v-btn flat href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank">
+      <v-btn flat href="https://github.com/france-connect/Relying-party" target="_blank">
         <span class="mr-2">Latest Release</span>
       </v-btn>
     </v-toolbar>
@@ -47,6 +47,8 @@
 </template>
 
 <script>
+import { AUTH_LOGOUT_V1 } from "@/store/actions/auth";
+
 export default {
   name: "AppNavigation",
   mounted() {
@@ -72,6 +74,12 @@ export default {
       title: "FranceConnect Agent",
       user_infos: {}
     };
+  },
+  methods: {
+    logout_V1: function() {
+      console.log("clicked");
+      this.$store.dispatch(AUTH_LOGOUT_V1);
+    }
   }
 };
 </script>
