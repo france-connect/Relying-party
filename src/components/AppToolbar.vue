@@ -36,9 +36,6 @@
 
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn v-if="user_infos" flat color="red" v-on:click="logout_V1">
-        <span class="mr-2">Logout</span>
-      </v-btn>
       <v-btn flat href="https://github.com/france-connect/Relying-party" target="_blank">
         <span class="mr-2">Latest Release</span>
       </v-btn>
@@ -47,14 +44,8 @@
 </template>
 
 <script>
-import { AUTH_LOGOUT_V1 } from "@/store/actions/auth";
-
 export default {
   name: "AppNavigation",
-  mounted() {
-    const userInfos = JSON.parse(localStorage.getItem("userInfos"));
-    this.user_infos = userInfos;
-  },
   data() {
     return {
       clipped: true,
@@ -71,15 +62,8 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: "FranceConnect Agent",
-      user_infos: {}
+      title: "FranceConnect Agent"
     };
-  },
-  methods: {
-    logout_V1: function() {
-      console.log("clicked");
-      this.$store.dispatch(AUTH_LOGOUT_V1);
-    }
   }
 };
 </script>

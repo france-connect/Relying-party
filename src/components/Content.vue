@@ -87,6 +87,11 @@
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
+
+          <v-spacer></v-spacer>
+          <v-btn v-if="user_infos" flat color="red" v-on:click="logout_V1">
+            <span class="mr-2">Logout</span>
+          </v-btn>
         </v-card>
       </v-flex>
     </v-layout>
@@ -94,7 +99,7 @@
 </template>
 
 <script>
-import { AUTH_REQUEST_V1 } from "@/store/actions/auth";
+import { AUTH_REQUEST_V1, AUTH_LOGOUT_V1 } from "@/store/actions/auth";
 
 export default {
   mounted() {
@@ -111,6 +116,9 @@ export default {
   methods: {
     login_V1: function() {
       this.$store.dispatch(AUTH_REQUEST_V1);
+    },
+    logout_V1: function() {
+      this.$store.dispatch(AUTH_LOGOUT_V1);
     }
   }
 };
