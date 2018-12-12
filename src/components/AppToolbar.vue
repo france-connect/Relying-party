@@ -37,7 +37,7 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn flat href="https://github.com/france-connect/Relying-party" target="_blank">
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Github</span>
       </v-btn>
     </v-toolbar>
   </div>

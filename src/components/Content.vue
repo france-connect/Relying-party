@@ -6,25 +6,14 @@
       </v-flex>
 
       <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">Welcome to Vuetify</h1>
-        <p class="subheading font-weight-regular">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis
-          ipsum sit amet tortor rhoncus eleifend quis vitae leo. Fusce convallis
-          augue a pharetra scelerisque. Phasellus et metus sit amet velit
-          sodales maximus. Vestibulum ante ipsum primis in faucibus orci luctus
-          et ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum
-          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-          Curae; Lorem ipsum dolor sit amet
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Lorem ipsum</a>
+        <h1 class="display-2 font-weight-bold mb-5">Bienvenue sur FSA1</h1>
+        <p class="headline font-weight-regular">
+          Vous êtes sur une application de test. Cette application vous permet de simuler une cinématique de connexion.
         </p>
       </v-flex>
 
       <v-flex mb-5 xs12>
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
+        <h2 class="subheading mb-4">Vous pouvez vérifier le niveau de compatibilité d'un Fournisseur d'Identité en cliquant sur le bouton <b>"Test de compatibilité OpenId Connect"</b> (à venir)</h2>
 
         <v-layout justify-center>
           <v-btn disabled color="primary">Openid Connect</v-btn>
@@ -32,7 +21,8 @@
       </v-flex>
 
       <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+        <h2 class="subheading mb-4">Vous pouvez tester la connexion à un Fournisseur d'Identité en cliquant sur le bouton <b>FranceConnect</b>
+        </h2>
 
         <v-layout justify-center>
           <v-btn v-on:click="login_V1" color="primary">FranceConnect</v-btn>
