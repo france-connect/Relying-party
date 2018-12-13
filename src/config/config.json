@@ -1,7 +1,7 @@
 {
     "FC_URL": "https://fca.int-cw.dev-franceconnect.fr",
     "FD_URL": "https://fdp.dev.dev-franceconnect.fr",
-    "FS_URL": "http://localhost:8080",
+    "FS_URL": "http://localhost:8081",
     "FRANCE_CONNECT_KIT_PATH": "/js/franceconnect.js",
   
     "AUTHORIZATION_FC_PATH": "/api/v1/authorize",
@@ -13,7 +13,8 @@
     "CLIENT_SECRET": "57cd7471c18b2f6faba732912079508567241e5162d69696d3dd17dc65e293f3",
     "CALLBACK_FS_PATH": "/callback",
     "LOGOUT_FS_PATH": "/logged-out",
-    "SCOPES": "openid profile birth dgfip_revenu_fiscal_de_reference_n_moins_1 dgfip_adresse_fiscale_de_taxation_n_moins_1",
+    "SCOPES": "openid profile birth",
+    "ACR_VALUES":"eidas2 siren organisation_name NAF_code",
     "DGFIP_DATA_FD_PATH": "/api/dgfip",
     "FAKE_ACCESS_TOKEN": "9af033eb295d0fe113988d29a26527f920114973b3a1ca7bdb44768fd0c73937",
     "USE_FC_MOCK": true

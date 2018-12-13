@@ -7,13 +7,16 @@
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-5">Bienvenue sur FSA1</h1>
-        <p class="headline font-weight-regular">
-          Vous êtes sur une application de test. Cette application vous permet de simuler une cinématique de connexion.
-        </p>
+        <p
+          class="headline font-weight-regular"
+        >Vous êtes sur une application de test. Cette application vous permet de simuler une cinématique de connexion.</p>
       </v-flex>
 
       <v-flex mb-5 xs12>
-        <h2 class="subheading mb-4">Vous pouvez vérifier le niveau de compatibilité d'un Fournisseur d'Identité en cliquant sur le bouton <b>"Test de compatibilité OpenId Connect"</b> (à venir)</h2>
+        <h2 class="subheading mb-4">
+          Vous pouvez vérifier le niveau de compatibilité d'un Fournisseur d'Identité en cliquant sur le bouton
+          <b>"Test de compatibilité OpenId Connect"</b> (à venir)
+        </h2>
 
         <v-layout justify-center>
           <v-btn disabled color="primary">Openid Connect</v-btn>
@@ -21,7 +24,9 @@
       </v-flex>
 
       <v-flex xs12 mb-5>
-        <h2 class="subheading mb-4">Vous pouvez tester la connexion à un Fournisseur d'Identité en cliquant sur le bouton <b>FranceConnect</b>
+        <h2 class="subheading mb-4">
+          Vous pouvez tester la connexion à un Fournisseur d'Identité en cliquant sur le bouton
+          <b>FranceConnect</b>
         </h2>
 
         <v-layout justify-center>
@@ -30,58 +35,30 @@
       </v-flex>
     </v-layout>
 
-    <v-layout text-xs-center mt-5 wrap v-else>
+    <v-layout row v-else>
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
-          <v-img src="https://cdn.vuetifyjs.com/images/lists/ali.png" height="300px">
-            <v-layout column fill-height>
-              <v-card-title>
-                <v-spacer></v-spacer>
-                <v-tooltip left>
-                  <v-btn dark icon>
-                    <v-icon color="green">turned_in</v-icon>
-                  </v-btn>
-                  <span>Left tooltip</span>
-                </v-tooltip>
-              </v-card-title>
-
-              <v-spacer></v-spacer>
-
-              <v-card-title class="white--text pl-5 pt-5">
-                <div class="display-1 pl-5 pt-5">
-                  {{user_infos.given_name}}
-                  {{user_infos.family_name}}
-                </div>
-              </v-card-title>
+          <v-toolbar flat>
+            <v-toolbar-title>Information de l'Agent :</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn v-on:click="logout_V1" flat color="red">
+              <span class="mr-2">Se déconnecter</span>
+            </v-btn>
+          </v-toolbar>
+          <v-container fluid grid-list-sm>
+            <v-layout row wrap>
+              <v-flex v-for="(result, index) in user_infos" :key="index" xs4>
+                <v-list-tile-title class="title">{{index}} :</v-list-tile-title>
+                <v-list-tile-sub-title class="mt-2 mb-2">
+                  {{
+                  result !== undefined ? result : undefined
+                  }}
+                </v-list-tile-sub-title>
+              </v-flex>
             </v-layout>
-          </v-img>
+          </v-container>
 
-          <v-list two-line>
-            <v-list-tile>
-              <v-list-tile-action>
-                <v-icon color="indigo">person</v-icon>
-              </v-list-tile-action>
-
-              <v-list-tile-content>
-                <v-list-tile-title>gender :</v-list-tile-title>
-                <v-list-tile-sub-title>{{user_infos.gender}}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
-
-            <v-list-tile>
-              <v-list-tile-action></v-list-tile-action>
-
-              <v-list-tile-content>
-                <v-list-tile-title>birthdate :</v-list-tile-title>
-                <v-list-tile-sub-title>{{user_infos.birthdate}}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-
-          <v-spacer></v-spacer>
-          <v-btn v-if="user_infos" flat color="red" v-on:click="logout_V1">
-            <span class="mr-2">Logout</span>
-          </v-btn>
+          <v-footer class="mt-5"></v-footer>
         </v-card>
       </v-flex>
     </v-layout>
@@ -96,11 +73,10 @@ export default {
     //eslint-disable-next-line
     const userInfos = JSON.parse(localStorage.getItem("userInfos"));
     this.user_infos = userInfos;
-    console.log("this.userInfos", this.user_infos);
   },
   data: function() {
     return {
-      user_infos: {}
+      user_infos: null
     };
   },
   methods: {

@@ -1,3 +1,5 @@
+"use strict";
+
 import {
   USER_REQUEST_V1,
   USER_SUCCESS_V1,
@@ -46,9 +48,7 @@ const actions = {
       api
         .getUserInfo_V1(token)
         .then(response => {
-          console.log("response.data", response.data.given_name);
-          //eslint-disable
-          resolve(response);
+          resolve(response.data);
         })
         .catch(error => {
           commit(USER_ERROR_V1, error);

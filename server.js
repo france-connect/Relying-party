@@ -66,7 +66,11 @@ app.use("/js", express.static(path.resolve(__dirname, "./dist/js")));
 app.use("/css", express.static(path.resolve(__dirname, "./dist/css")));
 
 app.get("*", (req, res) => {
-  res.setHeader("Content-Type", "text/html");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
 
   const context = {
     title: "Vue HN 2.0", // default title

@@ -1,7 +1,5 @@
 import { AUTH_REQUEST_V1, AUTH_LOGOUT_V1 } from "@/store/actions/auth";
 
-//import { USER_REQUEST_V1 } from "@/store/actions/user";
-
 import config from "@/config/config";
 import API from "@/utils/api";
 
@@ -26,7 +24,9 @@ const actions = {
   [AUTH_LOGOUT_V1]: ({ commit }) => {
     localStorage.removeItem("userInfos");
     commit(AUTH_LOGOUT_V1);
-    window.location = "/";
+    window.location = `${config.FC_URL}${config.LOGOUT_FC_PATH}?id_token_hint=${
+      config.CLIENT_ID
+    }${config.CLIENT_SECRET}`;
   }
 };
 

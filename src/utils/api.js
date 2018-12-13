@@ -13,7 +13,7 @@ export default class API {
     this._userInfoEndpoints = configuration.USERINFO_FC_PATH;
 
     this._responseType = "code";
-    this._acrValues = "eidas1";
+    this._acrValues = configuration.ACR_VALUES;
   }
 
   createUrlAuthorize_V1() {
@@ -63,7 +63,6 @@ export default class API {
       if (!token) {
         reject(new Error());
       }
-      console.log("token", token, this._fcUrl, this._userInfoEndpoints);
       try {
         const userinfo = axios.get(
           `${this._fcUrl}${this._userInfoEndpoints}?schema=openid`,
