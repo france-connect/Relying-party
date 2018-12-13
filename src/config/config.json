@@ -1,7 +1,7 @@
 {
     "FC_URL": "https://fca.int-cw.dev-franceconnect.fr",
     "FD_URL": "https://fdp.dev.dev-franceconnect.fr",
-    "FS_URL": "http://localhost:8081",
+    "FS_URL": "https://relying-party.docker.dev-franceconnect.fr/",
     "FRANCE_CONNECT_KIT_PATH": "/js/franceconnect.js",
   
     "AUTHORIZATION_FC_PATH": "/api/v1/authorize",

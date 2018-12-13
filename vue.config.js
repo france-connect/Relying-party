@@ -21,8 +21,8 @@ module.exports = {
     ],
     externals: TARGET_NODE
       ? nodeExternals({
-          whitelist: /\.css$/
-        })
+        whitelist: /\.css$/
+      })
       : undefined,
     output: {
       libraryTarget: TARGET_NODE ? "commonjs2" : undefined
@@ -34,6 +34,9 @@ module.exports = {
       alias: {
         "create-api": createApiFile
       }
+    },
+    devServer: {
+      disableHostCheck: true
     }
   }),
   chainWebpack: config => {
