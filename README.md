@@ -1,36 +1,19 @@
-# vuetify-relying-party
+# Vuetify Webpack SSR Template
 
-## Project setup
-```
-yarn install
-```
+> Vuetify SSR Webpack Template
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Build Setup
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+``` bash
+vue init vuetifyjs/webpack-ssr
 
-### Run your tests
-```
-yarn run test
+cd webpack-ssr
+
+# npm
+npm install
+
+# yarn
+yarn
 ```
 
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your end-to-end tests
-```
-yarn run test:e2e
-```
-
-### Run your unit tests
-```
-yarn run test:unit
-```
+For additional information, please visit the [Official Documentation](https://vuetifyjs.com).

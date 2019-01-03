@@ -1,0 +1,17 @@
+{
+  "/": {
+    "title": "Relying-Party",
+    "description": "Universal Relying-party for FranceConnect",
+    "keywords": "vue 2.0, vuetify"
+  },
+  "/documentation": {
+    "title": "Documentation of this site",
+    "description": "",
+    "keywords": ""
+  },
+  "/callback": {
+    "title": "Callback call by FC",
+    "description": "",
+    "keywords": ""
+  }
+}
